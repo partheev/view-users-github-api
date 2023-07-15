@@ -11,6 +11,13 @@ A platform to to verify GitHub profiles of the users. This app provides user pro
 -   List out repositories
 -   Pagination in the frontend
 
+## Screenshots
+#### Home page
+![ghss1](https://github.com/partheev/view-users-github-api/assets/30794881/41f12907-ea96-42a2-856d-5f3d4fd5026c)
+#### Profile page
+![ghss2](https://github.com/partheev/view-users-github-api/assets/30794881/f66c6552-43f6-4be6-b03e-6f78d3ad702d)
+![ghss3](https://github.com/partheev/view-users-github-api/assets/30794881/f37f2b34-d4c8-4f1f-9751-9a40d6f1d723)
+
 ## Tech-stack used
 
 -   Express.js with TypeScript for backend application.
