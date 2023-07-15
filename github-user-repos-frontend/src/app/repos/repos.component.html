@@ -1,0 +1,40 @@
+<div class="layout">
+  <div class="content">
+    <div *ngIf="error.isError" class="alert alert-danger" role="alert">
+      {{ error.errorMessage }}
+    </div>
+    <app-loader *ngIf="isFetching"></app-loader>
+    <div *ngIf="!isFetching && userDetails && !error.isError">
+      <div (click)="onBack()" class="backbtn" style="cursor: pointer">
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
+        <h6>Back</h6>
+      </div>
+      <app-user-details
+        [username]="username"
+        [user]="userDetails"
+      ></app-user-details>
+
+      <div class="repo-list">
+        <div class="row">
+          <div
+            class="col-6"
+            *ngFor="let repo of paginatedRepos"
+            style="padding: 1rem 1rem"
+          >
+            <app-repo [repo]="repo"></app-repo>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-pagination
+      *ngIf="noOfPages > 1"
+      (nextPage)="onNextPage()"
+      (prevPage)="onPrevPage()"
+      (selectPage)="onPageSelect($event)"
+      [noOfPages]="noOfPages"
+      [pages]="pages"
+      [activePage]="currentPage"
+    ></app-pagination>
+  </div>
+</div>

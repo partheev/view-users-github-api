@@ -1,0 +1,48 @@
+<div class="main-bg container">
+  <div class="content">
+    <img class="banner" src="assets/github-banner.png" alt="github" />
+    <div class="input-content">
+      <input
+        [ngModel]="username"
+        (ngModelChange)="onChangeUsername($event)"
+        type="text"
+        placeholder="Username"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div *ngIf="isFetching" class="info">
+        <div
+          class="spinner-border"
+          style="
+            height: 15px;
+            width: 15px;
+            border-width: 3px;
+            animation-duration: 500ms;
+          "
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div>{{ username }} is checking....</div>
+      </div>
+      <div *ngIf="!isFetching && isValid && username.length > 0" class="info">
+        <fa-icon [icon]="faCircleCheck" [style]="{ color: 'green' }"></fa-icon>
+        <div>{{ username }} is valid username</div>
+      </div>
+      <div *ngIf="!isFetching && !isValid && username.length > 0" class="info">
+        <fa-icon [icon]="faCircleXmark" [style]="{ color: 'red' }"></fa-icon>
+        <div>{{ username }} is invalid username</div>
+      </div>
+
+      <button
+        (click)="onSubmit()"
+        [disabled]="!isValid"
+        type="button"
+        class="btn btn-light fetch-repo-btn"
+      >
+        See repositories
+      </button>
+    </div>
+  </div>
+</div>

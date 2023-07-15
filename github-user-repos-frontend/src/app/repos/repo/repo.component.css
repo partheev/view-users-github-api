@@ -1,0 +1,14 @@
+.layout {
+  padding: 1rem;
+  min-height: 10rem;
+}
+
+.link {
+  text-decoration: none;
+}
+.badge-layout {
+  display: flex;
+  column-gap: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

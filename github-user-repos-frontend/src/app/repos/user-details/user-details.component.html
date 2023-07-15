@@ -1,0 +1,41 @@
+<div class="layout card">
+  <div class="pic">
+    <img [src]="user.avatar_url" class="user-profile" />
+  </div>
+  <div class="details">
+    <h3>{{ user.name || username }}</h3>
+    <p>{{ user.bio }}</p>
+    <div *ngIf="user.location" class="location">
+      <fa-icon [icon]="faLocationDot"></fa-icon>
+      <p>{{ user.location }}</p>
+    </div>
+
+    <h6 *ngIf="user.twitter_username">
+      Twitter:
+      <a
+        class="hyperlink"
+        target="_blank"
+        [href]="'https://www.twitter.com/' + user.twitter_username"
+        >https://twitter.com/{{ user.twitter_username }}</a
+      >
+    </h6>
+
+    <div class="followers-tab">
+      <fa-icon [icon]="faUser"></fa-icon>
+      <h6>{{ user.followers }} Followers</h6>
+      -
+      <h6>{{ user.following }} Following</h6>
+    </div>
+  </div>
+</div>
+<div class="repolink">
+  <fa-icon [icon]="faPaperclip"></fa-icon>
+  <p>
+    <a
+      target="_blank"
+      class="hyperlink"
+      [href]="'https://github.com/' + username"
+      >https://github.com/{{ username }}</a
+    >
+  </p>
+</div>

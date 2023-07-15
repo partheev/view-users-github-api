@@ -1,0 +1,25 @@
+<a
+  *ngIf="!!repo"
+  [href]="repo.html_url"
+  target="_blank"
+  class="link .text-secondary"
+>
+  <div class="card layout">
+    <h6 class="text-black">{{ repo.name }}</h6>
+    <p class="text-secondary" *ngIf="!!repo.description">
+      {{ repo.description }}
+    </p>
+
+    <div class="badge-layout">
+      <div class="badge-item" *ngFor="let topic of repo.topics">
+        <span class="badge bg-info">{{ topic }}</span>
+      </div>
+    </div>
+
+    <div class="badge-layout">
+      <div class="badge-item" *ngFor="let lang of repo.language">
+        <span class="badge bg-secondary">{{ lang }}</span>
+      </div>
+    </div>
+  </div>
+</a>

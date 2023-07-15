@@ -1,0 +1,24 @@
+<div class="layout">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" (click)="onPrev()">
+        <span class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </span>
+      </li>
+
+      <li
+        class="page-item {{ i == activePage ? 'active' : '' }}"
+        *ngFor="let i of pages"
+        (click)="selectedPage(i)"
+      >
+        <span class="page-link" href="#">{{ i }}</span>
+      </li>
+      <li class="page-item" (click)="onNext()">
+        <span class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </span>
+      </li>
+    </ul>
+  </nav>
+</div>
